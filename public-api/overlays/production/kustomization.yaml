@@ -15,18 +15,12 @@ resources:
   - ns.yaml
   - ../../base
 
-
-# file yaml
-#  - target:
-#      name: public-api
-#    path: deploy-merge.yaml
-
 patches:
   - target: 
       name: public-api
       kind: Deployment 
     path: deploy-merge.yaml
-    
+
   - target:
       name: svc-public-api
     path: svc-patch.yaml
