@@ -1,0 +1,44 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: public-stage
+
+commonLabels:
+  app: public-api-stage
+  team: devops
+
+commonAnnotations:
+  note: "This is an Stage deployment"
+
+
+resources:
+  - ns.yaml
+  - ../../base
+# merge
+patchesStrategicMerge:
+  - deploy-merge.yaml
+
+#yaml inline
+patches: 
+  - target:
+      name: svc-public-api
+    patch: | 
+      - op: add
+        path: /spec/type
+        value: ClusterIP
+#yaml file
+
+  - target:
+      name: cm-private-api
+    path: cm-patch.yaml
+  - target:
+      name: public-api
+      kind: Ingress
+    path: ingress-patch.yaml
+    
+
+images:
+   - name: KUSTOMIZE-DEFINIED
+     newName: jcalderon/public
+     newTag: 1.0.0
+
