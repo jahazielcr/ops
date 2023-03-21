@@ -5,4 +5,4 @@ metadata:
   name: public-api
 
 spec: 
-  replicas: 25
+  replicas: 2
