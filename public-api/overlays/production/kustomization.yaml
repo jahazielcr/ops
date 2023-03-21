@@ -20,7 +20,7 @@ patches:
       name: public-api
       kind: Deployment 
     path: deploy-merge.yaml
-
+    
   - target:
       name: svc-public-api
     path: svc-patch.yaml

@@ -6,7 +6,7 @@ metadata:
 #  namespace: public-stage "definied by overlays"
 
 spec:
-#  replicas: 1 "definied by overlays"
+replicas: 1
 
 #  selector:
 #    matchLabels:
