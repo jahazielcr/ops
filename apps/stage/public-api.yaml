@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadada:
+  name: stage-public-api
+  namespace: argocd
+spec:
+  name: ''
+  namespace: public-space
+  server: "https://kubernetes.default.svc"
+source: 
+  path: public-api/overlays/stage
+  repoURL: git@github.com:jahazielcr/ops.git
+  targetRevision: HEAD
+project: default
+syncPolicy:
+  automated:
+    prune: True
+    selfHeal: True
+  syncOptions:
+    -- CreateNamespace=true
+
