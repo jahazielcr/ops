@@ -8,37 +8,36 @@ commonLabels:
   team: devops
 
 commonAnnotations:
-  note: "This is an Stage deployment"
+  note: This is an Stage deployment
 
 
 resources:
-  - ns.yaml
-  - ../../base
+- ns.yaml
+- ../../base
 # merge
 patchesStrategicMerge:
-  - deploy-merge.yaml
+- deploy-merge.yaml
 
 #yaml inline
-patches: 
-  - target:
-      name: svc-public-api
-    patch: | 
-      - op: add
-        path: /spec/type
-        value: ClusterIP
 #yaml file
 
-  - target:
-      name: cm-private-api
-    path: cm-patch.yaml
-  - target:
-      name: public-api
-      kind: Ingress
-    path: ingress-patch.yaml
+patches:
+- patch: |
+    - op: add
+      path: /spec/type
+      value: ClusterIP
+  target:
+    name: svc-public-api
+- path: cm-patch.yaml
+  target:
+    name: cm-private-api
+- path: ingress-patch.yaml
+  target:
+    kind: Ingress
+    name: public-api
     
 
 images:
-   - name: KUSTOMIZE-DEFINIED
-     newName: jcalderon/public
-     newTag: 1.0.0
-
+- name: KUSTOMIZE-DEFINIED
+  newName: jcalderon/public
+  newTag: 2.0.0
