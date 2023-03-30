@@ -8,35 +8,34 @@ commonLabels:
   team: devops
 
 commonAnnotations:
-  note: "This is an Production deployment"
+  note: This is an Production deployment
 
 
 resources:
-  - ns.yaml
-  - ../../base
+- ns.yaml
+- ../../base
+
+    
+
 
 patches:
-  - target: 
-      kind: Deployment
-      name: public-api 
-    path: deploy-merge.yaml
-    
-  - target:
-      name: svc-public-api
-    path: svc-patch.yaml
-
-  - target:
-      name: cm-private-api
-    path: cm-patch.yaml
-
-  - target:
-      kind: Ingress
-      name: public-api
-    path: ingress-patch.yaml
+- path: deploy-merge.yaml
+  target:
+    kind: Deployment
+    name: public-api
+- path: svc-patch.yaml
+  target:
+    name: svc-public-api
+- path: cm-patch.yaml
+  target:
+    name: cm-private-api
+- path: ingress-patch.yaml
+  target:
+    kind: Ingress
+    name: public-api
     
 
 images:
-   - name: KUSTOMIZE-DEFINIED
-     newName: jcalderon/public
-     newTag: 1.0.0
-
+- name: KUSTOMIZE-DEFINIED
+  newName: jcalderon/public
+  newTag: 2.0.0
