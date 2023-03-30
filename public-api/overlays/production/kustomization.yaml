@@ -38,4 +38,4 @@ patches:
 images:
 - name: KUSTOMIZE-DEFINIED
   newName: jcalderon/public
-  newTag: 2.0.0
+  newTag: 3.0.0
