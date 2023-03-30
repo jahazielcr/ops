@@ -17,8 +17,8 @@ resources:
 
 patches:
   - target: 
-      name: public-api
-      kind: Deployment 
+      kind: Deployment
+      name: public-api 
     path: deploy-merge.yaml
     
   - target:
@@ -30,8 +30,8 @@ patches:
     path: cm-patch.yaml
 
   - target:
-      name: production-public-api
       kind: Ingress
+      name: production-public-api
     path: ingress-patch.yaml
     
 
