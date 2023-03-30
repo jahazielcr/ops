@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: production-public-api
+  name: public-api
 
 spec: 
   replicas: 4
