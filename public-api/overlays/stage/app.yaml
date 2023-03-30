@@ -71,7 +71,7 @@ spec:
       - envFrom:
         - configMapRef:
             name: cm-private-api
-        image: jcalderon/public:2.0.0
+        image: jcalderon/public:5.0.0
         name: public-api
         ports:
         - containerPort: 3000
