@@ -8,7 +8,7 @@ commonLabels:
   team: devops
 
 commonAnnotations:
-  note: This is an Production deployment
+  note: This is an Production Deployment
 
 
 resources:
