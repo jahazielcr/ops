@@ -14,28 +14,26 @@ commonAnnotations:
 resources:
 - ns.yaml
 - ../../base
-# merge
-patchesStrategicMerge:
-- deploy-merge.yaml
-
-#yaml inline
-#yaml file
 
 patches:
-- patch: |
-    - op: add
-      path: /spec/type
-      value: LoadBalancer
+
+- path: deploy-merge.yaml
+  target:
+    kind: Deployment
+    name: public-api
+    
+- path: svc-patch.yaml
   target:
     name: svc-public-api
+
 - path: cm-patch.yaml
   target:
     name: cm-private-api
+
 - path: ingress-patch.yaml
   target:
     kind: Ingress
-    name: public-api
-    
+    name: public-api 
 
 images:
 - name: KUSTOMIZE-DEFINIED
