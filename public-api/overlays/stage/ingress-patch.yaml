@@ -1,3 +1,3 @@
 - op: replace
   path: /spec/rules/0/host
-  value: api-stage.jahazefmi.kubelabs.dev
+  value: api-stage.jahazek1.kubelabs.dev
