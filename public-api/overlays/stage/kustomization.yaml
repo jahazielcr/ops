@@ -20,20 +20,20 @@ patches:
 - path: deploy-merge.yaml
   target:
     kind: Deployment
-    name: public-api
-    
+    name: public-stage-api
+
 - path: svc-patch.yaml
   target:
-    name: svc-public-api
+    name: svc-stage-public-api
 
 - path: cm-patch.yaml
   target:
-    name: cm-private-api
+    name: cm-private-stage-api
 
 - path: ingress-patch.yaml
   target:
     kind: Ingress
-    name: public-api 
+    name: public-stage-api 
 
 images:
 - name: KUSTOMIZE-DEFINIED
