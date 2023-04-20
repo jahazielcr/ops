@@ -5,4 +5,4 @@ resources:
   - cm.yaml
   - deploy.yaml
   - svc.yaml
-  - ing.yaml
+ # - ing.yaml
