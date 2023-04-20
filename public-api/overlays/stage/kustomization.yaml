@@ -30,10 +30,10 @@ patches:
   target:
     name: cm-private-api
 
-- path: ingress-patch.yaml
-  target:
-    kind: Ingress
-    name: public-api 
+#- path: ingress-patch.yaml
+#  target:
+#    kind: Ingress
+#    name: public-api 
 
 images:
 - name: KUSTOMIZE-DEFINIED
